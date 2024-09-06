@@ -13,8 +13,8 @@ permissions:
   contents: read
 
 jobs:
+  push_to_registry:
     name: Push the project code to Dockerhub
-    build-and-push:
     runs-on: ubuntu-latest
 
     steps:
