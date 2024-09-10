@@ -34,11 +34,7 @@ jobs:
         with:
             username: ${{ secrets.DOCKER_HUB_USERNAME }}
             password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-     
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./docker  # specify the build context
-          file: ./Dockerfile  # specify the Dockerfile path
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/gmtnindia/agents-dashboard:latest
+
+      - name: Debug Docker Hub Username
+        run: echo "Docker Hub Username:${{ secrets.DOCKER_HUB_USERNAME }}"
+      
