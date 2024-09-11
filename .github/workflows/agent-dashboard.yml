@@ -42,5 +42,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/gmtnindia/agents-dashboard:latest
+          tags: gmtnindia/agents-dashboard:latest
       
