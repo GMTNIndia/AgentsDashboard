@@ -37,4 +37,12 @@ jobs:
 
       - name: Debug Docker Hub Username
         run: echo "Docker Hub Username:${{ secrets.DOCKER_HUB_USERNAME }}"
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./docker  # specify the build context
+          file: ./Dockerfile  # specify the Dockerfile path
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/gmtnindia/agents-dashboard:latest  
       
